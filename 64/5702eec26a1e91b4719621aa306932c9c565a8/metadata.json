@@ -1,0 +1,246 @@
+{
+  "anchor_schema_version": 1,
+  "oobo_version": "1.1.0",
+  "commit_hash": "645702eec26a1e91b4719621aa306932c9c565a8",
+  "branch": "main",
+  "author": "oobobench <bench@oobo.ai>",
+  "author_type": "automated",
+  "contributors": [
+    {
+      "name": "oobobench <bench@oobo.ai>",
+      "role": "human"
+    }
+  ],
+  "committed_at": 1780006732,
+  "message": "Encapsulate logic in value objects",
+  "files_changed": [
+    "src/app/application/commands/activate_user.py",
+    "src/app/application/commands/change_password.py",
+    "src/app/application/commands/create_user.py",
+    "src/app/application/commands/deactivate_user.py",
+    "src/app/application/commands/grant_admin.py",
+    "src/app/application/commands/revoke_admin.py",
+    "src/app/application/common/ports/user_command_gateway.py",
+    "src/app/domain/entities/user.py",
+    "src/app/domain/exceptions/user.py",
+    "src/app/domain/ports/password_hasher.py",
+    "src/app/domain/services/user.py",
+    "src/app/domain/value_objects/raw_password.py",
+    "src/app/domain/value_objects/raw_password/__init__.py",
+    "src/app/domain/value_objects/raw_password/constants.py",
+    "src/app/domain/value_objects/raw_password/raw_password.py",
+    "src/app/domain/value_objects/raw_password/validation.py",
+    "src/app/domain/value_objects/username.py",
+    "src/app/domain/value_objects/username/__init__.py",
+    "src/app/domain/value_objects/username/constants.py",
+    "src/app/domain/value_objects/username/username.py",
+    "src/app/domain/value_objects/username/validation.py",
+    "src/app/infrastructure/adapters/password_hasher_bcrypt.py",
+    "src/app/infrastructure/adapters/user_data_mapper_sqla.py",
+    "src/app/infrastructure/auth/handlers/log_in.py",
+    "src/app/infrastructure/auth/handlers/sign_up.py",
+    "src/app/infrastructure/persistence_sqla/mappings/user.py",
+    "tests/app/performance/profile_password_hasher_bcrypt.py",
+    "tests/app/unit/domain/value_objects/test_raw_password.py",
+    "tests/app/unit/domain/value_objects/test_username.py",
+    "tests/app/unit/factories/user_entity.py",
+    "tests/app/unit/factories/value_objects.py"
+  ],
+  "added": 130,
+  "deleted": 161,
+  "file_changes": [
+    {
+      "path": "src/app/application/commands/activate_user.py",
+      "added": 1,
+      "deleted": 1,
+      "attribution": "human"
+    },
+    {
+      "path": "src/app/application/commands/change_password.py",
+      "added": 2,
+      "deleted": 2,
+      "attribution": "human"
+    },
+    {
+      "path": "src/app/application/commands/create_user.py",
+      "added": 2,
+      "deleted": 2,
+      "attribution": "human"
+    },
+    {
+      "path": "src/app/application/commands/deactivate_user.py",
+      "added": 1,
+      "deleted": 1,
+      "attribution": "human"
+    },
+    {
+      "path": "src/app/application/commands/grant_admin.py",
+      "added": 1,
+      "deleted": 1,
+      "attribution": "human"
+    },
+    {
+      "path": "src/app/application/commands/revoke_admin.py",
+      "added": 1,
+      "deleted": 1,
+      "attribution": "human"
+    },
+    {
+      "path": "src/app/application/common/ports/user_command_gateway.py",
+      "added": 1,
+      "deleted": 1,
+      "attribution": "human"
+    },
+    {
+      "path": "src/app/domain/entities/user.py",
+      "added": 1,
+      "deleted": 1,
+      "attribution": "human"
+    },
+    {
+      "path": "src/app/domain/exceptions/user.py",
+      "added": 1,
+      "deleted": 1,
+      "attribution": "human"
+    },
+    {
+      "path": "src/app/domain/ports/password_hasher.py",
+      "added": 1,
+      "deleted": 1,
+      "attribution": "human"
+    },
+    {
+      "path": "src/app/domain/services/user.py",
+      "added": 2,
+      "deleted": 2,
+      "attribution": "human"
+    },
+    {
+      "path": "src/app/domain/value_objects/raw_password.py",
+      "added": 26,
+      "deleted": 0,
+      "attribution": "human"
+    },
+    {
+      "path": "src/app/domain/value_objects/raw_password/__init__.py",
+      "added": 0,
+      "deleted": 0,
+      "attribution": "human"
+    },
+    {
+      "path": "src/app/domain/value_objects/raw_password/constants.py",
+      "added": 0,
+      "deleted": 3,
+      "attribution": "human"
+    },
+    {
+      "path": "src/app/domain/value_objects/raw_password/raw_password.py",
+      "added": 0,
+      "deleted": 19,
+      "attribution": "human"
+    },
+    {
+      "path": "src/app/domain/value_objects/raw_password/validation.py",
+      "added": 0,
+      "deleted": 9,
+      "attribution": "human"
+    },
+    {
+      "path": "src/app/domain/value_objects/username.py",
+      "added": 70,
+      "deleted": 0,
+      "attribution": "human"
+    },
+    {
+      "path": "src/app/domain/value_objects/username/__init__.py",
+      "added": 0,
+      "deleted": 0,
+      "attribution": "human"
+    },
+    {
+      "path": "src/app/domain/value_objects/username/constants.py",
+      "added": 0,
+      "deleted": 23,
+      "attribution": "human"
+    },
+    {
+      "path": "src/app/domain/value_objects/username/username.py",
+      "added": 0,
+      "deleted": 23,
+      "attribution": "human"
+    },
+    {
+      "path": "src/app/domain/value_objects/username/validation.py",
+      "added": 0,
+      "deleted": 44,
+      "attribution": "human"
+    },
+    {
+      "path": "src/app/infrastructure/adapters/password_hasher_bcrypt.py",
+      "added": 1,
+      "deleted": 1,
+      "attribution": "human"
+    },
+    {
+      "path": "src/app/infrastructure/adapters/user_data_mapper_sqla.py",
+      "added": 1,
+      "deleted": 1,
+      "attribution": "human"
+    },
+    {
+      "path": "src/app/infrastructure/auth/handlers/log_in.py",
+      "added": 2,
+      "deleted": 2,
+      "attribution": "human"
+    },
+    {
+      "path": "src/app/infrastructure/auth/handlers/sign_up.py",
+      "added": 2,
+      "deleted": 2,
+      "attribution": "human"
+    },
+    {
+      "path": "src/app/infrastructure/persistence_sqla/mappings/user.py",
+      "added": 2,
+      "deleted": 3,
+      "attribution": "human"
+    },
+    {
+      "path": "tests/app/performance/profile_password_hasher_bcrypt.py",
+      "added": 1,
+      "deleted": 1,
+      "attribution": "human"
+    },
+    {
+      "path": "tests/app/unit/domain/value_objects/test_raw_password.py",
+      "added": 3,
+      "deleted": 4,
+      "attribution": "human"
+    },
+    {
+      "path": "tests/app/unit/domain/value_objects/test_username.py",
+      "added": 5,
+      "deleted": 9,
+      "attribution": "human"
+    },
+    {
+      "path": "tests/app/unit/factories/user_entity.py",
+      "added": 1,
+      "deleted": 1,
+      "attribution": "human"
+    },
+    {
+      "path": "tests/app/unit/factories/value_objects.py",
+      "added": 2,
+      "deleted": 2,
+      "attribution": "human"
+    }
+  ],
+  "ai_added": 0,
+  "ai_deleted": 0,
+  "human_added": 130,
+  "human_deleted": 161,
+  "ai_percentage": 0.0,
+  "session_ids": [],
+  "transparency_mode": "on"
+}
