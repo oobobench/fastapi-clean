@@ -1,0 +1,50 @@
+{
+  "anchor_schema_version": 1,
+  "oobo_version": "1.1.0",
+  "commit_hash": "2a29403e73fbd6800969f336903eeb8dfb45bbd8",
+  "branch": "main",
+  "author": "oobobench <bench@oobo.ai>",
+  "author_type": "automated",
+  "contributors": [
+    {
+      "name": "oobobench <bench@oobo.ai>",
+      "role": "human"
+    }
+  ],
+  "committed_at": 1780006712,
+  "message": "Explain domain layer better",
+  "files_changed": [
+    "Makefile",
+    "README.md",
+    "src/app/domain/entities/user.py"
+  ],
+  "added": 66,
+  "deleted": 48,
+  "file_changes": [
+    {
+      "path": "Makefile",
+      "added": 15,
+      "deleted": 13,
+      "attribution": "human"
+    },
+    {
+      "path": "README.md",
+      "added": 51,
+      "deleted": 26,
+      "attribution": "human"
+    },
+    {
+      "path": "src/app/domain/entities/user.py",
+      "added": 0,
+      "deleted": 9,
+      "attribution": "human"
+    }
+  ],
+  "ai_added": 0,
+  "ai_deleted": 0,
+  "human_added": 66,
+  "human_deleted": 48,
+  "ai_percentage": 0.0,
+  "session_ids": [],
+  "transparency_mode": "on"
+}
