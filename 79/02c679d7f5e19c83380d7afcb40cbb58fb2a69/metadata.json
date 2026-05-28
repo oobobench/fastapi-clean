@@ -1,0 +1,57 @@
+{
+  "anchor_schema_version": 1,
+  "oobo_version": "1.1.0",
+  "commit_hash": "7902c679d7f5e19c83380d7afcb40cbb58fb2a69",
+  "branch": "main",
+  "author": "oobobench <bench@oobo.ai>",
+  "author_type": "automated",
+  "contributors": [
+    {
+      "name": "oobobench <bench@oobo.ai>",
+      "role": "human"
+    }
+  ],
+  "committed_at": 1780006765,
+  "message": "Rename healthcheck endpoint, align CI",
+  "files_changed": [
+    ".github/workflows/ci.yaml",
+    "src/app/presentation/http/controllers/general/health.py",
+    "src/app/presentation/http/controllers/general/healthcheck.py",
+    "src/app/presentation/http/controllers/general/router.py"
+  ],
+  "added": 17,
+  "deleted": 25,
+  "file_changes": [
+    {
+      "path": ".github/workflows/ci.yaml",
+      "added": 11,
+      "deleted": 19,
+      "attribution": "human"
+    },
+    {
+      "path": "src/app/presentation/http/controllers/general/health.py",
+      "added": 16,
+      "deleted": 0,
+      "attribution": "human"
+    },
+    {
+      "path": "src/app/presentation/http/controllers/general/healthcheck.py",
+      "added": 0,
+      "deleted": 16,
+      "attribution": "human"
+    },
+    {
+      "path": "src/app/presentation/http/controllers/general/router.py",
+      "added": 3,
+      "deleted": 3,
+      "attribution": "human"
+    }
+  ],
+  "ai_added": 0,
+  "ai_deleted": 0,
+  "human_added": 30,
+  "human_deleted": 38,
+  "ai_percentage": 0.0,
+  "session_ids": [],
+  "transparency_mode": "on"
+}
