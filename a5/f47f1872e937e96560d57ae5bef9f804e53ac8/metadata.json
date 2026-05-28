@@ -1,0 +1,57 @@
+{
+  "anchor_schema_version": 1,
+  "oobo_version": "1.1.0",
+  "commit_hash": "a5f47f1872e937e96560d57ae5bef9f804e53ac8",
+  "branch": "main",
+  "author": "oobobench <bench@oobo.ai>",
+  "author_type": "automated",
+  "contributors": [
+    {
+      "name": "oobobench <bench@oobo.ai>",
+      "role": "human"
+    }
+  ],
+  "committed_at": 1780006780,
+  "message": "Add select for update to current user service",
+  "files_changed": [
+    "src/app/application/common/ports/user_command_gateway.py",
+    "src/app/application/common/services/current_user.py",
+    "src/app/infrastructure/adapters/user_data_mapper_sqla.py",
+    "src/app/infrastructure/auth/handlers/change_own_password.py"
+  ],
+  "added": 21,
+  "deleted": 6,
+  "file_changes": [
+    {
+      "path": "src/app/application/common/ports/user_command_gateway.py",
+      "added": 5,
+      "deleted": 1,
+      "attribution": "human"
+    },
+    {
+      "path": "src/app/application/common/services/current_user.py",
+      "added": 5,
+      "deleted": 2,
+      "attribution": "human"
+    },
+    {
+      "path": "src/app/infrastructure/adapters/user_data_mapper_sqla.py",
+      "added": 8,
+      "deleted": 1,
+      "attribution": "human"
+    },
+    {
+      "path": "src/app/infrastructure/auth/handlers/change_own_password.py",
+      "added": 3,
+      "deleted": 2,
+      "attribution": "human"
+    }
+  ],
+  "ai_added": 0,
+  "ai_deleted": 0,
+  "human_added": 21,
+  "human_deleted": 6,
+  "ai_percentage": 0.0,
+  "session_ids": [],
+  "transparency_mode": "on"
+}
