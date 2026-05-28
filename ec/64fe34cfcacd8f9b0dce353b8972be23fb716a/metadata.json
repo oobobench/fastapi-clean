@@ -1,0 +1,134 @@
+{
+  "anchor_schema_version": 1,
+  "oobo_version": "1.1.0",
+  "commit_hash": "ec64fe34cfcacd8f9b0dce353b8972be23fb716a",
+  "branch": "main",
+  "author": "oobobench <bench@oobo.ai>",
+  "author_type": "automated",
+  "contributors": [
+    {
+      "name": "oobobench <bench@oobo.ai>",
+      "role": "human"
+    }
+  ],
+  "committed_at": 1780006773,
+  "message": "Split password change to two endpoints",
+  "files_changed": [
+    "src/app/application/commands/change_password.py",
+    "src/app/application/commands/set_user_password.py",
+    "src/app/infrastructure/auth/exceptions.py",
+    "src/app/infrastructure/auth/handlers/change_own_password.py",
+    "src/app/presentation/http/controllers/account/change_own_password.py",
+    "src/app/presentation/http/controllers/account/router.py",
+    "src/app/presentation/http/controllers/users/activate_user.py",
+    "src/app/presentation/http/controllers/users/change_password.py",
+    "src/app/presentation/http/controllers/users/deactivate_user.py",
+    "src/app/presentation/http/controllers/users/grant_admin.py",
+    "src/app/presentation/http/controllers/users/revoke_admin.py",
+    "src/app/presentation/http/controllers/users/router.py",
+    "src/app/presentation/http/controllers/users/set_user_password.py",
+    "src/app/setup/ioc/application.py",
+    "src/app/setup/ioc/infrastructure.py"
+  ],
+  "added": 168,
+  "deleted": 37,
+  "file_changes": [
+    {
+      "path": "src/app/application/commands/change_password.py",
+      "added": 0,
+      "deleted": 88,
+      "attribution": "human"
+    },
+    {
+      "path": "src/app/application/commands/set_user_password.py",
+      "added": 81,
+      "deleted": 0,
+      "attribution": "human"
+    },
+    {
+      "path": "src/app/infrastructure/auth/exceptions.py",
+      "added": 4,
+      "deleted": 0,
+      "attribution": "human"
+    },
+    {
+      "path": "src/app/infrastructure/auth/handlers/change_own_password.py",
+      "added": 66,
+      "deleted": 0,
+      "attribution": "human"
+    },
+    {
+      "path": "src/app/presentation/http/controllers/account/change_own_password.py",
+      "added": 60,
+      "deleted": 0,
+      "attribution": "human"
+    },
+    {
+      "path": "src/app/presentation/http/controllers/account/router.py",
+      "added": 4,
+      "deleted": 0,
+      "attribution": "human"
+    },
+    {
+      "path": "src/app/presentation/http/controllers/users/activate_user.py",
+      "added": 2,
+      "deleted": 2,
+      "attribution": "human"
+    },
+    {
+      "path": "src/app/presentation/http/controllers/users/change_password.py",
+      "added": 0,
+      "deleted": 58,
+      "attribution": "human"
+    },
+    {
+      "path": "src/app/presentation/http/controllers/users/deactivate_user.py",
+      "added": 2,
+      "deleted": 2,
+      "attribution": "human"
+    },
+    {
+      "path": "src/app/presentation/http/controllers/users/grant_admin.py",
+      "added": 2,
+      "deleted": 2,
+      "attribution": "human"
+    },
+    {
+      "path": "src/app/presentation/http/controllers/users/revoke_admin.py",
+      "added": 2,
+      "deleted": 2,
+      "attribution": "human"
+    },
+    {
+      "path": "src/app/presentation/http/controllers/users/router.py",
+      "added": 4,
+      "deleted": 4,
+      "attribution": "human"
+    },
+    {
+      "path": "src/app/presentation/http/controllers/users/set_user_password.py",
+      "added": 58,
+      "deleted": 0,
+      "attribution": "human"
+    },
+    {
+      "path": "src/app/setup/ioc/application.py",
+      "added": 2,
+      "deleted": 2,
+      "attribution": "human"
+    },
+    {
+      "path": "src/app/setup/ioc/infrastructure.py",
+      "added": 4,
+      "deleted": 0,
+      "attribution": "human"
+    }
+  ],
+  "ai_added": 0,
+  "ai_deleted": 0,
+  "human_added": 291,
+  "human_deleted": 160,
+  "ai_percentage": 0.0,
+  "session_ids": [],
+  "transparency_mode": "on"
+}
