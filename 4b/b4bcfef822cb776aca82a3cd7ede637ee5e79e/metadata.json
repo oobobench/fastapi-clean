@@ -1,0 +1,36 @@
+{
+  "anchor_schema_version": 1,
+  "oobo_version": "1.1.0",
+  "commit_hash": "4bb4bcfef822cb776aca82a3cd7ede637ee5e79e",
+  "branch": "main",
+  "author": "oobobench <bench@oobo.ai>",
+  "author_type": "automated",
+  "contributors": [
+    {
+      "name": "oobobench <bench@oobo.ai>",
+      "role": "human"
+    }
+  ],
+  "committed_at": 1780006705,
+  "message": "Add access guard for inactive users",
+  "files_changed": [
+    "src/app/application/common/services/current_user.py"
+  ],
+  "added": 1,
+  "deleted": 1,
+  "file_changes": [
+    {
+      "path": "src/app/application/common/services/current_user.py",
+      "added": 1,
+      "deleted": 1,
+      "attribution": "human"
+    }
+  ],
+  "ai_added": 0,
+  "ai_deleted": 0,
+  "human_added": 1,
+  "human_deleted": 1,
+  "ai_percentage": 0.0,
+  "session_ids": [],
+  "transparency_mode": "on"
+}
