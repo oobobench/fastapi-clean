@@ -1,0 +1,64 @@
+{
+  "anchor_schema_version": 1,
+  "oobo_version": "1.1.0",
+  "commit_hash": "ce48cf788b0f8c456aaf6aee26f302894d36b841",
+  "branch": "main",
+  "author": "oobobench <bench@oobo.ai>",
+  "author_type": "automated",
+  "contributors": [
+    {
+      "name": "oobobench <bench@oobo.ai>",
+      "role": "human"
+    }
+  ],
+  "committed_at": 1780006749,
+  "message": "Drop dataclass usage in base entity",
+  "files_changed": [
+    "src/app/domain/entities/base.py",
+    "src/app/domain/entities/user.py",
+    "src/app/domain/value_objects/base.py",
+    "tests/app/unit/factories/named_entity.py",
+    "tests/app/unit/factories/tagged_entity.py"
+  ],
+  "added": 33,
+  "deleted": 38,
+  "file_changes": [
+    {
+      "path": "src/app/domain/entities/base.py",
+      "added": 3,
+      "deleted": 14,
+      "attribution": "human"
+    },
+    {
+      "path": "src/app/domain/entities/user.py",
+      "added": 14,
+      "deleted": 7,
+      "attribution": "human"
+    },
+    {
+      "path": "src/app/domain/value_objects/base.py",
+      "added": 2,
+      "deleted": 1,
+      "attribution": "human"
+    },
+    {
+      "path": "tests/app/unit/factories/named_entity.py",
+      "added": 8,
+      "deleted": 6,
+      "attribution": "human"
+    },
+    {
+      "path": "tests/app/unit/factories/tagged_entity.py",
+      "added": 6,
+      "deleted": 10,
+      "attribution": "human"
+    }
+  ],
+  "ai_added": 0,
+  "ai_deleted": 0,
+  "human_added": 33,
+  "human_deleted": 38,
+  "ai_percentage": 0.0,
+  "session_ids": [],
+  "transparency_mode": "on"
+}
