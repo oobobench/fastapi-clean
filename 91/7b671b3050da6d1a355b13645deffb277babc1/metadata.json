@@ -1,0 +1,99 @@
+{
+  "anchor_schema_version": 1,
+  "oobo_version": "1.1.0",
+  "commit_hash": "917b671b3050da6d1a355b13645deffb277babc1",
+  "branch": "main",
+  "author": "oobobench <bench@oobo.ai>",
+  "author_type": "automated",
+  "contributors": [
+    {
+      "name": "oobobench <bench@oobo.ai>",
+      "role": "human"
+    }
+  ],
+  "committed_at": 1780006722,
+  "message": "Improve base value object",
+  "files_changed": [
+    ".github/workflows/ci.yaml",
+    "README.md",
+    "config/local/Dockerfile",
+    "pyproject.toml",
+    "src/app/domain/value_objects/base.py",
+    "tests/app/unit/domain/value_objects/test_base.py",
+    "tests/app/unit/factories/named_entity.py",
+    "tests/app/unit/factories/tagged_entity.py",
+    "tests/app/unit/factories/value_objects.py",
+    "uv.lock"
+  ],
+  "added": 438,
+  "deleted": 372,
+  "file_changes": [
+    {
+      "path": ".github/workflows/ci.yaml",
+      "added": 1,
+      "deleted": 1,
+      "attribution": "human"
+    },
+    {
+      "path": "README.md",
+      "added": 3,
+      "deleted": 15,
+      "attribution": "human"
+    },
+    {
+      "path": "config/local/Dockerfile",
+      "added": 2,
+      "deleted": 2,
+      "attribution": "human"
+    },
+    {
+      "path": "pyproject.toml",
+      "added": 1,
+      "deleted": 1,
+      "attribution": "human"
+    },
+    {
+      "path": "src/app/domain/value_objects/base.py",
+      "added": 50,
+      "deleted": 31,
+      "attribution": "human"
+    },
+    {
+      "path": "tests/app/unit/domain/value_objects/test_base.py",
+      "added": 30,
+      "deleted": 7,
+      "attribution": "human"
+    },
+    {
+      "path": "tests/app/unit/factories/named_entity.py",
+      "added": 1,
+      "deleted": 1,
+      "attribution": "human"
+    },
+    {
+      "path": "tests/app/unit/factories/tagged_entity.py",
+      "added": 1,
+      "deleted": 1,
+      "attribution": "human"
+    },
+    {
+      "path": "tests/app/unit/factories/value_objects.py",
+      "added": 2,
+      "deleted": 2,
+      "attribution": "human"
+    },
+    {
+      "path": "uv.lock",
+      "added": 347,
+      "deleted": 311,
+      "attribution": "human"
+    }
+  ],
+  "ai_added": 0,
+  "ai_deleted": 0,
+  "human_added": 438,
+  "human_deleted": 372,
+  "ai_percentage": 0.0,
+  "session_ids": [],
+  "transparency_mode": "on"
+}
