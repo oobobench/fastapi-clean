@@ -1,0 +1,183 @@
+{
+  "anchor_schema_version": 1,
+  "oobo_version": "1.1.0",
+  "commit_hash": "eeb7ddcec0924bd096d27a76d3977e67af877605",
+  "branch": "main",
+  "author": "oobobench <bench@oobo.ai>",
+  "author_type": "automated",
+  "contributors": [
+    {
+      "name": "oobobench <bench@oobo.ai>",
+      "role": "human"
+    }
+  ],
+  "committed_at": 1780006741,
+  "message": "Improve base entity",
+  "files_changed": [
+    "pyproject.toml",
+    "src/app/application/common/ports/access_revoker.py",
+    "src/app/application/common/ports/flusher.py",
+    "src/app/application/common/ports/identity_provider.py",
+    "src/app/application/common/ports/transaction_manager.py",
+    "src/app/application/common/ports/user_command_gateway.py",
+    "src/app/application/common/ports/user_query_gateway.py",
+    "src/app/application/common/query_params/pagination.py",
+    "src/app/application/common/services/authorization/authorize.py",
+    "src/app/domain/entities/base.py",
+    "src/app/domain/services/user.py",
+    "src/app/infrastructure/adapters/main_transaction_manager_sqla.py",
+    "src/app/infrastructure/adapters/user_data_mapper_sqla.py",
+    "src/app/infrastructure/adapters/user_reader_sqla.py",
+    "src/app/infrastructure/auth/adapters/access_revoker.py",
+    "src/app/infrastructure/auth/adapters/data_mapper_sqla.py",
+    "src/app/infrastructure/auth/adapters/identity_provider.py",
+    "src/app/infrastructure/auth/adapters/transaction_manager_sqla.py",
+    "src/app/infrastructure/auth/session/ports/gateway.py",
+    "src/app/infrastructure/auth/session/ports/transaction_manager.py",
+    "src/app/infrastructure/auth/session/service.py",
+    "tests/app/unit/domain/entities/test_base.py"
+  ],
+  "added": 68,
+  "deleted": 105,
+  "file_changes": [
+    {
+      "path": "pyproject.toml",
+      "added": 0,
+      "deleted": 1,
+      "attribution": "human"
+    },
+    {
+      "path": "src/app/application/common/ports/access_revoker.py",
+      "added": 1,
+      "deleted": 3,
+      "attribution": "human"
+    },
+    {
+      "path": "src/app/application/common/ports/flusher.py",
+      "added": 2,
+      "deleted": 2,
+      "attribution": "human"
+    },
+    {
+      "path": "src/app/application/common/ports/identity_provider.py",
+      "added": 1,
+      "deleted": 3,
+      "attribution": "human"
+    },
+    {
+      "path": "src/app/application/common/ports/transaction_manager.py",
+      "added": 2,
+      "deleted": 2,
+      "attribution": "human"
+    },
+    {
+      "path": "src/app/application/common/ports/user_command_gateway.py",
+      "added": 3,
+      "deleted": 9,
+      "attribution": "human"
+    },
+    {
+      "path": "src/app/application/common/ports/user_query_gateway.py",
+      "added": 1,
+      "deleted": 3,
+      "attribution": "human"
+    },
+    {
+      "path": "src/app/application/common/query_params/pagination.py",
+      "added": 1,
+      "deleted": 0,
+      "attribution": "human"
+    },
+    {
+      "path": "src/app/application/common/services/authorization/authorize.py",
+      "added": 1,
+      "deleted": 3,
+      "attribution": "human"
+    },
+    {
+      "path": "src/app/domain/entities/base.py",
+      "added": 20,
+      "deleted": 2,
+      "attribution": "human"
+    },
+    {
+      "path": "src/app/domain/services/user.py",
+      "added": 2,
+      "deleted": 6,
+      "attribution": "human"
+    },
+    {
+      "path": "src/app/infrastructure/adapters/main_transaction_manager_sqla.py",
+      "added": 1,
+      "deleted": 3,
+      "attribution": "human"
+    },
+    {
+      "path": "src/app/infrastructure/adapters/user_data_mapper_sqla.py",
+      "added": 3,
+      "deleted": 9,
+      "attribution": "human"
+    },
+    {
+      "path": "src/app/infrastructure/adapters/user_reader_sqla.py",
+      "added": 1,
+      "deleted": 3,
+      "attribution": "human"
+    },
+    {
+      "path": "src/app/infrastructure/auth/adapters/access_revoker.py",
+      "added": 1,
+      "deleted": 3,
+      "attribution": "human"
+    },
+    {
+      "path": "src/app/infrastructure/auth/adapters/data_mapper_sqla.py",
+      "added": 5,
+      "deleted": 15,
+      "attribution": "human"
+    },
+    {
+      "path": "src/app/infrastructure/auth/adapters/identity_provider.py",
+      "added": 1,
+      "deleted": 3,
+      "attribution": "human"
+    },
+    {
+      "path": "src/app/infrastructure/auth/adapters/transaction_manager_sqla.py",
+      "added": 1,
+      "deleted": 3,
+      "attribution": "human"
+    },
+    {
+      "path": "src/app/infrastructure/auth/session/ports/gateway.py",
+      "added": 5,
+      "deleted": 15,
+      "attribution": "human"
+    },
+    {
+      "path": "src/app/infrastructure/auth/session/ports/transaction_manager.py",
+      "added": 2,
+      "deleted": 2,
+      "attribution": "human"
+    },
+    {
+      "path": "src/app/infrastructure/auth/session/service.py",
+      "added": 5,
+      "deleted": 15,
+      "attribution": "human"
+    },
+    {
+      "path": "tests/app/unit/domain/entities/test_base.py",
+      "added": 9,
+      "deleted": 0,
+      "attribution": "human"
+    }
+  ],
+  "ai_added": 0,
+  "ai_deleted": 0,
+  "human_added": 68,
+  "human_deleted": 105,
+  "ai_percentage": 0.0,
+  "session_ids": [],
+  "transparency_mode": "on"
+}
