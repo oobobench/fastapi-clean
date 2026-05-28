@@ -1,0 +1,1786 @@
+{
+  "anchor_schema_version": 1,
+  "oobo_version": "1.1.0",
+  "commit_hash": "edb731941c5283cd2adcd7ebe381a244412f2463",
+  "branch": "main",
+  "author": "oobobench <bench@oobo.ai>",
+  "author_type": "automated",
+  "contributors": [
+    {
+      "name": "oobobench <bench@oobo.ai>",
+      "role": "human"
+    }
+  ],
+  "committed_at": 1780006687,
+  "message": "Refactoring",
+  "files_changed": [
+    ".dockerignore",
+    ".github/workflows/ci.yaml",
+    ".gitignore",
+    ".pre-commit-config.yaml",
+    "LICENSE",
+    "Makefile",
+    "README.md",
+    "alembic.ini",
+    "config/__init__.py",
+    "config/dev/.gitkeep",
+    "config/local/Dockerfile",
+    "config/local/config.toml",
+    "config/local/docker-compose.yaml",
+    "config/local/export.toml",
+    "config/prod/.gitkeep",
+    "config/toml_config_manager.py",
+    "docs/Robert_Martin_CA.png",
+    "docs/application_controller_interactor.svg",
+    "docs/application_interactor.svg",
+    "docs/application_interactor_adapter.svg",
+    "docs/dep_graph_basic.svg",
+    "docs/dep_graph_inv_correct.svg",
+    "docs/dep_graph_inv_correct_di.svg",
+    "docs/dep_graph_inv_corrupted.svg",
+    "docs/domain_adapter.svg",
+    "docs/draw.io/application_controller_interactor.drawio",
+    "docs/draw.io/application_interactor.drawio",
+    "docs/draw.io/application_interactor_adapter.drawio",
+    "docs/draw.io/dep_graph_basic.drawio",
+    "docs/draw.io/dep_graph_inv_correct.drawio",
+    "docs/draw.io/dep_graph_inv_correct_di.drawio",
+    "docs/draw.io/dep_graph_inv_corrupted.drawio",
+    "docs/draw.io/domain_adapter.drawio",
+    "docs/draw.io/identity_provider.drawio",
+    "docs/draw.io/infrastructure_controller_handler.drawio",
+    "docs/draw.io/infrastructure_handler.drawio",
+    "docs/draw.io/toml_config_manager.drawio",
+    "docs/handlers.png",
+    "docs/identity_provider.svg",
+    "docs/infrastructure_controller_handler.svg",
+    "docs/infrastructure_handler.svg",
+    "docs/onion_1.svg",
+    "docs/onion_2.svg",
+    "docs/toml_config_manager.svg",
+    "pyproject.toml",
+    "scripts/dishka/plot_dependencies_data.py",
+    "scripts/makefile/docker_prune.sh",
+    "scripts/makefile/pycache_del.sh",
+    "src/app/__init__.py",
+    "src/app/application/__init__.py",
+    "src/app/application/commands/__init__.py",
+    "src/app/application/commands/activate_user.py",
+    "src/app/application/commands/change_password.py",
+    "src/app/application/commands/create_user.py",
+    "src/app/application/commands/deactivate_user.py",
+    "src/app/application/commands/grant_admin.py",
+    "src/app/application/commands/revoke_admin.py",
+    "src/app/application/common/__init__.py",
+    "src/app/application/common/exceptions/__init__.py",
+    "src/app/application/common/exceptions/authorization.py",
+    "src/app/application/common/exceptions/base.py",
+    "src/app/application/common/exceptions/query.py",
+    "src/app/application/common/ports/__init__.py",
+    "src/app/application/common/ports/access_revoker.py",
+    "src/app/application/common/ports/flusher.py",
+    "src/app/application/common/ports/identity_provider.py",
+    "src/app/application/common/ports/transaction_manager.py",
+    "src/app/application/common/ports/user_command_gateway.py",
+    "src/app/application/common/ports/user_query_gateway.py",
+    "src/app/application/common/query_models/__init__.py",
+    "src/app/application/common/query_models/user.py",
+    "src/app/application/common/query_params/__init__.py",
+    "src/app/application/common/query_params/pagination.py",
+    "src/app/application/common/query_params/sorting.py",
+    "src/app/application/common/query_params/user.py",
+    "src/app/application/common/services/__init__.py",
+    "src/app/application/common/services/authorization/__init__.py",
+    "src/app/application/common/services/authorization/authorize.py",
+    "src/app/application/common/services/authorization/base.py",
+    "src/app/application/common/services/authorization/composite.py",
+    "src/app/application/common/services/authorization/permissions.py",
+    "src/app/application/common/services/authorization/role_hierarchy.py",
+    "src/app/application/common/services/constants.py",
+    "src/app/application/common/services/current_user.py",
+    "src/app/application/queries/__init__.py",
+    "src/app/application/queries/list_users.py",
+    "src/app/domain/__init__.py",
+    "src/app/domain/entities/__init__.py",
+    "src/app/domain/entities/base.py",
+    "src/app/domain/entities/user.py",
+    "src/app/domain/enums/__init__.py",
+    "src/app/domain/enums/user_role.py",
+    "src/app/domain/exceptions/__init__.py",
+    "src/app/domain/exceptions/base.py",
+    "src/app/domain/exceptions/user.py",
+    "src/app/domain/ports/__init__.py",
+    "src/app/domain/ports/password_hasher.py",
+    "src/app/domain/ports/user_id_generator.py",
+    "src/app/domain/services/__init__.py",
+    "src/app/domain/services/user.py",
+    "src/app/domain/value_objects/__init__.py",
+    "src/app/domain/value_objects/base.py",
+    "src/app/domain/value_objects/raw_password/__init__.py",
+    "src/app/domain/value_objects/raw_password/constants.py",
+    "src/app/domain/value_objects/raw_password/raw_password.py",
+    "src/app/domain/value_objects/raw_password/validation.py",
+    "src/app/domain/value_objects/user_id.py",
+    "src/app/domain/value_objects/user_password_hash.py",
+    "src/app/domain/value_objects/username/__init__.py",
+    "src/app/domain/value_objects/username/constants.py",
+    "src/app/domain/value_objects/username/username.py",
+    "src/app/domain/value_objects/username/validation.py",
+    "src/app/infrastructure/__init__.py",
+    "src/app/infrastructure/adapters/__init__.py",
+    "src/app/infrastructure/adapters/constants.py",
+    "src/app/infrastructure/adapters/main_flusher_sqla.py",
+    "src/app/infrastructure/adapters/main_transaction_manager_sqla.py",
+    "src/app/infrastructure/adapters/password_hasher_bcrypt.py",
+    "src/app/infrastructure/adapters/types.py",
+    "src/app/infrastructure/adapters/user_data_mapper_sqla.py",
+    "src/app/infrastructure/adapters/user_id_generator_uuid.py",
+    "src/app/infrastructure/adapters/user_reader_sqla.py",
+    "src/app/infrastructure/auth/__init__.py",
+    "src/app/infrastructure/auth/adapters/__init__.py",
+    "src/app/infrastructure/auth/adapters/access_revoker.py",
+    "src/app/infrastructure/auth/adapters/data_mapper_sqla.py",
+    "src/app/infrastructure/auth/adapters/identity_provider.py",
+    "src/app/infrastructure/auth/adapters/transaction_manager_sqla.py",
+    "src/app/infrastructure/auth/adapters/types.py",
+    "src/app/infrastructure/auth/exceptions.py",
+    "src/app/infrastructure/auth/handlers/__init__.py",
+    "src/app/infrastructure/auth/handlers/constants.py",
+    "src/app/infrastructure/auth/handlers/log_in.py",
+    "src/app/infrastructure/auth/handlers/log_out.py",
+    "src/app/infrastructure/auth/handlers/sign_up.py",
+    "src/app/infrastructure/auth/session/__init__.py",
+    "src/app/infrastructure/auth/session/constants.py",
+    "src/app/infrastructure/auth/session/id_generator_str.py",
+    "src/app/infrastructure/auth/session/model.py",
+    "src/app/infrastructure/auth/session/ports/__init__.py",
+    "src/app/infrastructure/auth/session/ports/gateway.py",
+    "src/app/infrastructure/auth/session/ports/transaction_manager.py",
+    "src/app/infrastructure/auth/session/ports/transport.py",
+    "src/app/infrastructure/auth/session/service.py",
+    "src/app/infrastructure/auth/session/timer_utc.py",
+    "src/app/infrastructure/exceptions/__init__.py",
+    "src/app/infrastructure/exceptions/base.py",
+    "src/app/infrastructure/exceptions/gateway.py",
+    "src/app/infrastructure/persistence_sqla/__init__.py",
+    "src/app/infrastructure/persistence_sqla/alembic/README",
+    "src/app/infrastructure/persistence_sqla/alembic/__init__.py",
+    "src/app/infrastructure/persistence_sqla/alembic/env.py",
+    "src/app/infrastructure/persistence_sqla/alembic/script.py.mako",
+    "src/app/infrastructure/persistence_sqla/alembic/versions/2025_06_11_2058-e325187c1eeb_users_auth.py",
+    "src/app/infrastructure/persistence_sqla/alembic/versions/__init__.py",
+    "src/app/infrastructure/persistence_sqla/config.py",
+    "src/app/infrastructure/persistence_sqla/mappings/__init__.py",
+    "src/app/infrastructure/persistence_sqla/mappings/all.py",
+    "src/app/infrastructure/persistence_sqla/mappings/auth_session.py",
+    "src/app/infrastructure/persistence_sqla/mappings/user.py",
+    "src/app/infrastructure/persistence_sqla/provider.py",
+    "src/app/infrastructure/persistence_sqla/registry.py",
+    "src/app/presentation/__init__.py",
+    "src/app/presentation/http/__init__.py",
+    "src/app/presentation/http/auth/__init__.py",
+    "src/app/presentation/http/auth/access_token_processor_jwt.py",
+    "src/app/presentation/http/auth/adapters/__init__.py",
+    "src/app/presentation/http/auth/adapters/session_transport_jwt_cookie.py",
+    "src/app/presentation/http/auth/asgi_middleware.py",
+    "src/app/presentation/http/auth/constants.py",
+    "src/app/presentation/http/auth/cookie_params.py",
+    "src/app/presentation/http/auth/fastapi_openapi_markers.py",
+    "src/app/presentation/http/controllers/__init__.py",
+    "src/app/presentation/http/controllers/account/__init__.py",
+    "src/app/presentation/http/controllers/account/log_in.py",
+    "src/app/presentation/http/controllers/account/log_out.py",
+    "src/app/presentation/http/controllers/account/router.py",
+    "src/app/presentation/http/controllers/account/sign_up.py",
+    "src/app/presentation/http/controllers/api_v1_router.py",
+    "src/app/presentation/http/controllers/general/__init__.py",
+    "src/app/presentation/http/controllers/general/healthcheck.py",
+    "src/app/presentation/http/controllers/general/router.py",
+    "src/app/presentation/http/controllers/root_router.py",
+    "src/app/presentation/http/controllers/users/__init__.py",
+    "src/app/presentation/http/controllers/users/activate_user.py",
+    "src/app/presentation/http/controllers/users/change_password.py",
+    "src/app/presentation/http/controllers/users/create_user.py",
+    "src/app/presentation/http/controllers/users/deactivate_user.py",
+    "src/app/presentation/http/controllers/users/grant_admin.py",
+    "src/app/presentation/http/controllers/users/list_users.py",
+    "src/app/presentation/http/controllers/users/revoke_admin.py",
+    "src/app/presentation/http/controllers/users/router.py",
+    "src/app/presentation/http/errors/__init__.py",
+    "src/app/presentation/http/errors/callbacks.py",
+    "src/app/presentation/http/errors/translators.py",
+    "src/app/run.py",
+    "src/app/setup/__init__.py",
+    "src/app/setup/app_factory.py",
+    "src/app/setup/config/__init__.py",
+    "src/app/setup/config/database.py",
+    "src/app/setup/config/loader.py",
+    "src/app/setup/config/logs.py",
+    "src/app/setup/config/security.py",
+    "src/app/setup/config/settings.py",
+    "src/app/setup/ioc/__init__.py",
+    "src/app/setup/ioc/application.py",
+    "src/app/setup/ioc/domain.py",
+    "src/app/setup/ioc/infrastructure.py",
+    "src/app/setup/ioc/presentation.py",
+    "src/app/setup/ioc/provider_registry.py",
+    "src/app/setup/ioc/settings.py",
+    "tests/__init__.py",
+    "tests/app/__init__.py",
+    "tests/app/integration/__init__.py",
+    "tests/app/integration/setup/__init__.py",
+    "tests/app/integration/setup/test_cfg_loader.py",
+    "tests/app/performance/__init__.py",
+    "tests/app/performance/profile_password_hasher_bcrypt.py",
+    "tests/app/unit/__init__.py",
+    "tests/app/unit/application/__init__.py",
+    "tests/app/unit/application/authz_service/__init__.py",
+    "tests/app/unit/application/authz_service/permission_stubs.py",
+    "tests/app/unit/application/authz_service/test_authorize.py",
+    "tests/app/unit/application/authz_service/test_composite.py",
+    "tests/app/unit/application/authz_service/test_permissions.py",
+    "tests/app/unit/domain/__init__.py",
+    "tests/app/unit/domain/entities/__init__.py",
+    "tests/app/unit/domain/entities/test_base.py",
+    "tests/app/unit/domain/enums/__init__.py",
+    "tests/app/unit/domain/enums/test_user_role.py",
+    "tests/app/unit/domain/services/__init__.py",
+    "tests/app/unit/domain/services/conftest.py",
+    "tests/app/unit/domain/services/test_user.py",
+    "tests/app/unit/domain/value_objects/__init__.py",
+    "tests/app/unit/domain/value_objects/test_base.py",
+    "tests/app/unit/domain/value_objects/test_raw_password.py",
+    "tests/app/unit/domain/value_objects/test_username.py",
+    "tests/app/unit/factories/__init__.py",
+    "tests/app/unit/factories/named_entity.py",
+    "tests/app/unit/factories/settings_data.py",
+    "tests/app/unit/factories/tagged_entity.py",
+    "tests/app/unit/factories/user_entity.py",
+    "tests/app/unit/factories/value_objects.py",
+    "tests/app/unit/infrastructure/__init__.py",
+    "tests/app/unit/infrastructure/test_password_hasher_bcrypt.py",
+    "tests/app/unit/setup/__init__.py",
+    "tests/app/unit/setup/test_cfg_database.py",
+    "tests/app/unit/setup/test_cfg_loader.py",
+    "tests/app/unit/setup/test_cfg_logs.py",
+    "tests/app/unit/setup/test_cfg_security.py",
+    "uv.lock"
+  ],
+  "added": 9274,
+  "deleted": 1,
+  "file_changes": [
+    {
+      "path": ".dockerignore",
+      "added": 31,
+      "deleted": 0,
+      "attribution": "human"
+    },
+    {
+      "path": ".github/workflows/ci.yaml",
+      "added": 57,
+      "deleted": 0,
+      "attribution": "human"
+    },
+    {
+      "path": ".gitignore",
+      "added": 171,
+      "deleted": 0,
+      "attribution": "human"
+    },
+    {
+      "path": ".pre-commit-config.yaml",
+      "added": 9,
+      "deleted": 0,
+      "attribution": "human"
+    },
+    {
+      "path": "LICENSE",
+      "added": 21,
+      "deleted": 0,
+      "attribution": "human"
+    },
+    {
+      "path": "Makefile",
+      "added": 93,
+      "deleted": 0,
+      "attribution": "human"
+    },
+    {
+      "path": "README.md",
+      "added": 730,
+      "deleted": 1,
+      "attribution": "human"
+    },
+    {
+      "path": "alembic.ini",
+      "added": 114,
+      "deleted": 0,
+      "attribution": "human"
+    },
+    {
+      "path": "config/__init__.py",
+      "added": 0,
+      "deleted": 0,
+      "attribution": "human"
+    },
+    {
+      "path": "config/dev/.gitkeep",
+      "added": 0,
+      "deleted": 0,
+      "attribution": "human"
+    },
+    {
+      "path": "config/local/Dockerfile",
+      "added": 24,
+      "deleted": 0,
+      "attribution": "human"
+    },
+    {
+      "path": "config/local/config.toml",
+      "added": 23,
+      "deleted": 0,
+      "attribution": "human"
+    },
+    {
+      "path": "config/local/docker-compose.yaml",
+      "added": 45,
+      "deleted": 0,
+      "attribution": "human"
+    },
+    {
+      "path": "config/local/export.toml",
+      "added": 13,
+      "deleted": 0,
+      "attribution": "human"
+    },
+    {
+      "path": "config/prod/.gitkeep",
+      "added": 0,
+      "deleted": 0,
+      "attribution": "human"
+    },
+    {
+      "path": "config/toml_config_manager.py",
+      "added": 283,
+      "deleted": 0,
+      "attribution": "human"
+    },
+    {
+      "path": "docs/Robert_Martin_CA.png",
+      "added": 0,
+      "deleted": 0,
+      "attribution": "human"
+    },
+    {
+      "path": "docs/application_controller_interactor.svg",
+      "added": 4,
+      "deleted": 0,
+      "attribution": "human"
+    },
+    {
+      "path": "docs/application_interactor.svg",
+      "added": 4,
+      "deleted": 0,
+      "attribution": "human"
+    },
+    {
+      "path": "docs/application_interactor_adapter.svg",
+      "added": 4,
+      "deleted": 0,
+      "attribution": "human"
+    },
+    {
+      "path": "docs/dep_graph_basic.svg",
+      "added": 4,
+      "deleted": 0,
+      "attribution": "human"
+    },
+    {
+      "path": "docs/dep_graph_inv_correct.svg",
+      "added": 4,
+      "deleted": 0,
+      "attribution": "human"
+    },
+    {
+      "path": "docs/dep_graph_inv_correct_di.svg",
+      "added": 4,
+      "deleted": 0,
+      "attribution": "human"
+    },
+    {
+      "path": "docs/dep_graph_inv_corrupted.svg",
+      "added": 4,
+      "deleted": 0,
+      "attribution": "human"
+    },
+    {
+      "path": "docs/domain_adapter.svg",
+      "added": 4,
+      "deleted": 0,
+      "attribution": "human"
+    },
+    {
+      "path": "docs/draw.io/application_controller_interactor.drawio",
+      "added": 40,
+      "deleted": 0,
+      "attribution": "human"
+    },
+    {
+      "path": "docs/draw.io/application_interactor.drawio",
+      "added": 53,
+      "deleted": 0,
+      "attribution": "human"
+    },
+    {
+      "path": "docs/draw.io/application_interactor_adapter.drawio",
+      "added": 84,
+      "deleted": 0,
+      "attribution": "human"
+    },
+    {
+      "path": "docs/draw.io/dep_graph_basic.drawio",
+      "added": 43,
+      "deleted": 0,
+      "attribution": "human"
+    },
+    {
+      "path": "docs/draw.io/dep_graph_inv_correct.drawio",
+      "added": 38,
+      "deleted": 0,
+      "attribution": "human"
+    },
+    {
+      "path": "docs/draw.io/dep_graph_inv_correct_di.drawio",
+      "added": 75,
+      "deleted": 0,
+      "attribution": "human"
+    },
+    {
+      "path": "docs/draw.io/dep_graph_inv_corrupted.drawio",
+      "added": 24,
+      "deleted": 0,
+      "attribution": "human"
+    },
+    {
+      "path": "docs/draw.io/domain_adapter.drawio",
+      "added": 37,
+      "deleted": 0,
+      "attribution": "human"
+    },
+    {
+      "path": "docs/draw.io/identity_provider.drawio",
+      "added": 70,
+      "deleted": 0,
+      "attribution": "human"
+    },
+    {
+      "path": "docs/draw.io/infrastructure_controller_handler.drawio",
+      "added": 40,
+      "deleted": 0,
+      "attribution": "human"
+    },
+    {
+      "path": "docs/draw.io/infrastructure_handler.drawio",
+      "added": 61,
+      "deleted": 0,
+      "attribution": "human"
+    },
+    {
+      "path": "docs/draw.io/toml_config_manager.drawio",
+      "added": 73,
+      "deleted": 0,
+      "attribution": "human"
+    },
+    {
+      "path": "docs/handlers.png",
+      "added": 0,
+      "deleted": 0,
+      "attribution": "human"
+    },
+    {
+      "path": "docs/identity_provider.svg",
+      "added": 4,
+      "deleted": 0,
+      "attribution": "human"
+    },
+    {
+      "path": "docs/infrastructure_controller_handler.svg",
+      "added": 4,
+      "deleted": 0,
+      "attribution": "human"
+    },
+    {
+      "path": "docs/infrastructure_handler.svg",
+      "added": 4,
+      "deleted": 0,
+      "attribution": "human"
+    },
+    {
+      "path": "docs/onion_1.svg",
+      "added": 4,
+      "deleted": 0,
+      "attribution": "human"
+    },
+    {
+      "path": "docs/onion_2.svg",
+      "added": 4,
+      "deleted": 0,
+      "attribution": "human"
+    },
+    {
+      "path": "docs/toml_config_manager.svg",
+      "added": 4,
+      "deleted": 0,
+      "attribution": "human"
+    },
+    {
+      "path": "pyproject.toml",
+      "added": 188,
+      "deleted": 0,
+      "attribution": "human"
+    },
+    {
+      "path": "scripts/dishka/plot_dependencies_data.py",
+      "added": 29,
+      "deleted": 0,
+      "attribution": "human"
+    },
+    {
+      "path": "scripts/makefile/docker_prune.sh",
+      "added": 10,
+      "deleted": 0,
+      "attribution": "human"
+    },
+    {
+      "path": "scripts/makefile/pycache_del.sh",
+      "added": 2,
+      "deleted": 0,
+      "attribution": "human"
+    },
+    {
+      "path": "src/app/__init__.py",
+      "added": 0,
+      "deleted": 0,
+      "attribution": "human"
+    },
+    {
+      "path": "src/app/application/__init__.py",
+      "added": 0,
+      "deleted": 0,
+      "attribution": "human"
+    },
+    {
+      "path": "src/app/application/commands/__init__.py",
+      "added": 0,
+      "deleted": 0,
+      "attribution": "human"
+    },
+    {
+      "path": "src/app/application/commands/activate_user.py",
+      "added": 97,
+      "deleted": 0,
+      "attribution": "human"
+    },
+    {
+      "path": "src/app/application/commands/change_password.py",
+      "added": 88,
+      "deleted": 0,
+      "attribution": "human"
+    },
+    {
+      "path": "src/app/application/commands/create_user.py",
+      "added": 98,
+      "deleted": 0,
+      "attribution": "human"
+    },
+    {
+      "path": "src/app/application/commands/deactivate_user.py",
+      "added": 103,
+      "deleted": 0,
+      "attribution": "human"
+    },
+    {
+      "path": "src/app/application/commands/grant_admin.py",
+      "added": 84,
+      "deleted": 0,
+      "attribution": "human"
+    },
+    {
+      "path": "src/app/application/commands/revoke_admin.py",
+      "added": 85,
+      "deleted": 0,
+      "attribution": "human"
+    },
+    {
+      "path": "src/app/application/common/__init__.py",
+      "added": 0,
+      "deleted": 0,
+      "attribution": "human"
+    },
+    {
+      "path": "src/app/application/common/exceptions/__init__.py",
+      "added": 0,
+      "deleted": 0,
+      "attribution": "human"
+    },
+    {
+      "path": "src/app/application/common/exceptions/authorization.py",
+      "added": 5,
+      "deleted": 0,
+      "attribution": "human"
+    },
+    {
+      "path": "src/app/application/common/exceptions/base.py",
+      "added": 2,
+      "deleted": 0,
+      "attribution": "human"
+    },
+    {
+      "path": "src/app/application/common/exceptions/query.py",
+      "added": 9,
+      "deleted": 0,
+      "attribution": "human"
+    },
+    {
+      "path": "src/app/application/common/ports/__init__.py",
+      "added": 0,
+      "deleted": 0,
+      "attribution": "human"
+    },
+    {
+      "path": "src/app/application/common/ports/access_revoker.py",
+      "added": 12,
+      "deleted": 0,
+      "attribution": "human"
+    },
+    {
+      "path": "src/app/application/common/ports/flusher.py",
+      "added": 17,
+      "deleted": 0,
+      "attribution": "human"
+    },
+    {
+      "path": "src/app/application/common/ports/identity_provider.py",
+      "added": 12,
+      "deleted": 0,
+      "attribution": "human"
+    },
+    {
+      "path": "src/app/application/common/ports/transaction_manager.py",
+      "added": 18,
+      "deleted": 0,
+      "attribution": "human"
+    },
+    {
+      "path": "src/app/application/common/ports/user_command_gateway.py",
+      "added": 30,
+      "deleted": 0,
+      "attribution": "human"
+    },
+    {
+      "path": "src/app/application/common/ports/user_query_gateway.py",
+      "added": 16,
+      "deleted": 0,
+      "attribution": "human"
+    },
+    {
+      "path": "src/app/application/common/query_models/__init__.py",
+      "added": 0,
+      "deleted": 0,
+      "attribution": "human"
+    },
+    {
+      "path": "src/app/application/common/query_models/user.py",
+      "added": 11,
+      "deleted": 0,
+      "attribution": "human"
+    },
+    {
+      "path": "src/app/application/common/query_params/__init__.py",
+      "added": 0,
+      "deleted": 0,
+      "attribution": "human"
+    },
+    {
+      "path": "src/app/application/common/query_params/pagination.py",
+      "added": 19,
+      "deleted": 0,
+      "attribution": "human"
+    },
+    {
+      "path": "src/app/application/common/query_params/sorting.py",
+      "added": 6,
+      "deleted": 0,
+      "attribution": "human"
+    },
+    {
+      "path": "src/app/application/common/query_params/user.py",
+      "added": 16,
+      "deleted": 0,
+      "attribution": "human"
+    },
+    {
+      "path": "src/app/application/common/services/__init__.py",
+      "added": 0,
+      "deleted": 0,
+      "attribution": "human"
+    },
+    {
+      "path": "src/app/application/common/services/authorization/__init__.py",
+      "added": 0,
+      "deleted": 0,
+      "attribution": "human"
+    },
+    {
+      "path": "src/app/application/common/services/authorization/authorize.py",
+      "added": 18,
+      "deleted": 0,
+      "attribution": "human"
+    },
+    {
+      "path": "src/app/application/common/services/authorization/base.py",
+      "added": 12,
+      "deleted": 0,
+      "attribution": "human"
+    },
+    {
+      "path": "src/app/application/common/services/authorization/composite.py",
+      "added": 12,
+      "deleted": 0,
+      "attribution": "human"
+    },
+    {
+      "path": "src/app/application/common/services/authorization/permissions.py",
+      "added": 53,
+      "deleted": 0,
+      "attribution": "human"
+    },
+    {
+      "path": "src/app/application/common/services/authorization/role_hierarchy.py",
+      "added": 10,
+      "deleted": 0,
+      "attribution": "human"
+    },
+    {
+      "path": "src/app/application/common/services/constants.py",
+      "added": 6,
+      "deleted": 0,
+      "attribution": "human"
+    },
+    {
+      "path": "src/app/application/common/services/current_user.py",
+      "added": 40,
+      "deleted": 0,
+      "attribution": "human"
+    },
+    {
+      "path": "src/app/application/queries/__init__.py",
+      "added": 0,
+      "deleted": 0,
+      "attribution": "human"
+    },
+    {
+      "path": "src/app/application/queries/list_users.py",
+      "added": 99,
+      "deleted": 0,
+      "attribution": "human"
+    },
+    {
+      "path": "src/app/domain/__init__.py",
+      "added": 0,
+      "deleted": 0,
+      "attribution": "human"
+    },
+    {
+      "path": "src/app/domain/entities/__init__.py",
+      "added": 0,
+      "deleted": 0,
+      "attribution": "human"
+    },
+    {
+      "path": "src/app/domain/entities/base.py",
+      "added": 45,
+      "deleted": 0,
+      "attribution": "human"
+    },
+    {
+      "path": "src/app/domain/entities/user.py",
+      "added": 24,
+      "deleted": 0,
+      "attribution": "human"
+    },
+    {
+      "path": "src/app/domain/enums/__init__.py",
+      "added": 0,
+      "deleted": 0,
+      "attribution": "human"
+    },
+    {
+      "path": "src/app/domain/enums/user_role.py",
+      "added": 15,
+      "deleted": 0,
+      "attribution": "human"
+    },
+    {
+      "path": "src/app/domain/exceptions/__init__.py",
+      "added": 0,
+      "deleted": 0,
+      "attribution": "human"
+    },
+    {
+      "path": "src/app/domain/exceptions/base.py",
+      "added": 23,
+      "deleted": 0,
+      "attribution": "human"
+    },
+    {
+      "path": "src/app/domain/exceptions/user.py",
+      "added": 37,
+      "deleted": 0,
+      "attribution": "human"
+    },
+    {
+      "path": "src/app/domain/ports/__init__.py",
+      "added": 0,
+      "deleted": 0,
+      "attribution": "human"
+    },
+    {
+      "path": "src/app/domain/ports/password_hasher.py",
+      "added": 12,
+      "deleted": 0,
+      "attribution": "human"
+    },
+    {
+      "path": "src/app/domain/ports/user_id_generator.py",
+      "added": 7,
+      "deleted": 0,
+      "attribution": "human"
+    },
+    {
+      "path": "src/app/domain/services/__init__.py",
+      "added": 0,
+      "deleted": 0,
+      "attribution": "human"
+    },
+    {
+      "path": "src/app/domain/services/user.py",
+      "added": 73,
+      "deleted": 0,
+      "attribution": "human"
+    },
+    {
+      "path": "src/app/domain/value_objects/__init__.py",
+      "added": 0,
+      "deleted": 0,
+      "attribution": "human"
+    },
+    {
+      "path": "src/app/domain/value_objects/base.py",
+      "added": 57,
+      "deleted": 0,
+      "attribution": "human"
+    },
+    {
+      "path": "src/app/domain/value_objects/raw_password/__init__.py",
+      "added": 0,
+      "deleted": 0,
+      "attribution": "human"
+    },
+    {
+      "path": "src/app/domain/value_objects/raw_password/constants.py",
+      "added": 3,
+      "deleted": 0,
+      "attribution": "human"
+    },
+    {
+      "path": "src/app/domain/value_objects/raw_password/raw_password.py",
+      "added": 19,
+      "deleted": 0,
+      "attribution": "human"
+    },
+    {
+      "path": "src/app/domain/value_objects/raw_password/validation.py",
+      "added": 9,
+      "deleted": 0,
+      "attribution": "human"
+    },
+    {
+      "path": "src/app/domain/value_objects/user_id.py",
+      "added": 9,
+      "deleted": 0,
+      "attribution": "human"
+    },
+    {
+      "path": "src/app/domain/value_objects/user_password_hash.py",
+      "added": 8,
+      "deleted": 0,
+      "attribution": "human"
+    },
+    {
+      "path": "src/app/domain/value_objects/username/__init__.py",
+      "added": 0,
+      "deleted": 0,
+      "attribution": "human"
+    },
+    {
+      "path": "src/app/domain/value_objects/username/constants.py",
+      "added": 23,
+      "deleted": 0,
+      "attribution": "human"
+    },
+    {
+      "path": "src/app/domain/value_objects/username/username.py",
+      "added": 23,
+      "deleted": 0,
+      "attribution": "human"
+    },
+    {
+      "path": "src/app/domain/value_objects/username/validation.py",
+      "added": 44,
+      "deleted": 0,
+      "attribution": "human"
+    },
+    {
+      "path": "src/app/infrastructure/__init__.py",
+      "added": 0,
+      "deleted": 0,
+      "attribution": "human"
+    },
+    {
+      "path": "src/app/infrastructure/adapters/__init__.py",
+      "added": 0,
+      "deleted": 0,
+      "attribution": "human"
+    },
+    {
+      "path": "src/app/infrastructure/adapters/constants.py",
+      "added": 8,
+      "deleted": 0,
+      "attribution": "human"
+    },
+    {
+      "path": "src/app/infrastructure/adapters/main_flusher_sqla.py",
+      "added": 43,
+      "deleted": 0,
+      "attribution": "human"
+    },
+    {
+      "path": "src/app/infrastructure/adapters/main_transaction_manager_sqla.py",
+      "added": 32,
+      "deleted": 0,
+      "attribution": "human"
+    },
+    {
+      "path": "src/app/infrastructure/adapters/password_hasher_bcrypt.py",
+      "added": 44,
+      "deleted": 0,
+      "attribution": "human"
+    },
+    {
+      "path": "src/app/infrastructure/adapters/types.py",
+      "added": 5,
+      "deleted": 0,
+      "attribution": "human"
+    },
+    {
+      "path": "src/app/infrastructure/adapters/user_data_mapper_sqla.py",
+      "added": 64,
+      "deleted": 0,
+      "attribution": "human"
+    },
+    {
+      "path": "src/app/infrastructure/adapters/user_id_generator_uuid.py",
+      "added": 10,
+      "deleted": 0,
+      "attribution": "human"
+    },
+    {
+      "path": "src/app/infrastructure/adapters/user_reader_sqla.py",
+      "added": 77,
+      "deleted": 0,
+      "attribution": "human"
+    },
+    {
+      "path": "src/app/infrastructure/auth/__init__.py",
+      "added": 0,
+      "deleted": 0,
+      "attribution": "human"
+    },
+    {
+      "path": "src/app/infrastructure/auth/adapters/__init__.py",
+      "added": 0,
+      "deleted": 0,
+      "attribution": "human"
+    },
+    {
+      "path": "src/app/infrastructure/auth/adapters/access_revoker.py",
+      "added": 17,
+      "deleted": 0,
+      "attribution": "human"
+    },
+    {
+      "path": "src/app/infrastructure/auth/adapters/data_mapper_sqla.py",
+      "added": 84,
+      "deleted": 0,
+      "attribution": "human"
+    },
+    {
+      "path": "src/app/infrastructure/auth/adapters/identity_provider.py",
+      "added": 17,
+      "deleted": 0,
+      "attribution": "human"
+    },
+    {
+      "path": "src/app/infrastructure/auth/adapters/transaction_manager_sqla.py",
+      "added": 32,
+      "deleted": 0,
+      "attribution": "human"
+    },
+    {
+      "path": "src/app/infrastructure/auth/adapters/types.py",
+      "added": 5,
+      "deleted": 0,
+      "attribution": "human"
+    },
+    {
+      "path": "src/app/infrastructure/auth/exceptions.py",
+      "added": 9,
+      "deleted": 0,
+      "attribution": "human"
+    },
+    {
+      "path": "src/app/infrastructure/auth/handlers/__init__.py",
+      "added": 0,
+      "deleted": 0,
+      "attribution": "human"
+    },
+    {
+      "path": "src/app/infrastructure/auth/handlers/constants.py",
+      "added": 6,
+      "deleted": 0,
+      "attribution": "human"
+    },
+    {
+      "path": "src/app/infrastructure/auth/handlers/log_in.py",
+      "added": 93,
+      "deleted": 0,
+      "attribution": "human"
+    },
+    {
+      "path": "src/app/infrastructure/auth/handlers/log_out.py",
+      "added": 38,
+      "deleted": 0,
+      "attribution": "human"
+    },
+    {
+      "path": "src/app/infrastructure/auth/handlers/sign_up.py",
+      "added": 89,
+      "deleted": 0,
+      "attribution": "human"
+    },
+    {
+      "path": "src/app/infrastructure/auth/session/__init__.py",
+      "added": 0,
+      "deleted": 0,
+      "attribution": "human"
+    },
+    {
+      "path": "src/app/infrastructure/auth/session/constants.py",
+      "added": 11,
+      "deleted": 0,
+      "attribution": "human"
+    },
+    {
+      "path": "src/app/infrastructure/auth/session/id_generator_str.py",
+      "added": 6,
+      "deleted": 0,
+      "attribution": "human"
+    },
+    {
+      "path": "src/app/infrastructure/auth/session/model.py",
+      "added": 19,
+      "deleted": 0,
+      "attribution": "human"
+    },
+    {
+      "path": "src/app/infrastructure/auth/session/ports/__init__.py",
+      "added": 0,
+      "deleted": 0,
+      "attribution": "human"
+    },
+    {
+      "path": "src/app/infrastructure/auth/session/ports/gateway.py",
+      "added": 42,
+      "deleted": 0,
+      "attribution": "human"
+    },
+    {
+      "path": "src/app/infrastructure/auth/session/ports/transaction_manager.py",
+      "added": 21,
+      "deleted": 0,
+      "attribution": "human"
+    },
+    {
+      "path": "src/app/infrastructure/auth/session/ports/transport.py",
+      "added": 15,
+      "deleted": 0,
+      "attribution": "human"
+    },
+    {
+      "path": "src/app/infrastructure/auth/session/service.py",
+      "added": 250,
+      "deleted": 0,
+      "attribution": "human"
+    },
+    {
+      "path": "src/app/infrastructure/auth/session/timer_utc.py",
+      "added": 27,
+      "deleted": 0,
+      "attribution": "human"
+    },
+    {
+      "path": "src/app/infrastructure/exceptions/__init__.py",
+      "added": 0,
+      "deleted": 0,
+      "attribution": "human"
+    },
+    {
+      "path": "src/app/infrastructure/exceptions/base.py",
+      "added": 2,
+      "deleted": 0,
+      "attribution": "human"
+    },
+    {
+      "path": "src/app/infrastructure/exceptions/gateway.py",
+      "added": 9,
+      "deleted": 0,
+      "attribution": "human"
+    },
+    {
+      "path": "src/app/infrastructure/persistence_sqla/__init__.py",
+      "added": 0,
+      "deleted": 0,
+      "attribution": "human"
+    },
+    {
+      "path": "src/app/infrastructure/persistence_sqla/alembic/README",
+      "added": 1,
+      "deleted": 0,
+      "attribution": "human"
+    },
+    {
+      "path": "src/app/infrastructure/persistence_sqla/alembic/__init__.py",
+      "added": 0,
+      "deleted": 0,
+      "attribution": "human"
+    },
+    {
+      "path": "src/app/infrastructure/persistence_sqla/alembic/env.py",
+      "added": 99,
+      "deleted": 0,
+      "attribution": "human"
+    },
+    {
+      "path": "src/app/infrastructure/persistence_sqla/alembic/script.py.mako",
+      "added": 26,
+      "deleted": 0,
+      "attribution": "human"
+    },
+    {
+      "path": "src/app/infrastructure/persistence_sqla/alembic/versions/2025_06_11_2058-e325187c1eeb_users_auth.py",
+      "added": 52,
+      "deleted": 0,
+      "attribution": "human"
+    },
+    {
+      "path": "src/app/infrastructure/persistence_sqla/alembic/versions/__init__.py",
+      "added": 0,
+      "deleted": 0,
+      "attribution": "human"
+    },
+    {
+      "path": "src/app/infrastructure/persistence_sqla/config.py",
+      "added": 12,
+      "deleted": 0,
+      "attribution": "human"
+    },
+    {
+      "path": "src/app/infrastructure/persistence_sqla/mappings/__init__.py",
+      "added": 0,
+      "deleted": 0,
+      "attribution": "human"
+    },
+    {
+      "path": "src/app/infrastructure/persistence_sqla/mappings/all.py",
+      "added": 32,
+      "deleted": 0,
+      "attribution": "human"
+    },
+    {
+      "path": "src/app/infrastructure/persistence_sqla/mappings/auth_session.py",
+      "added": 27,
+      "deleted": 0,
+      "attribution": "human"
+    },
+    {
+      "path": "src/app/infrastructure/persistence_sqla/mappings/user.py",
+      "added": 40,
+      "deleted": 0,
+      "attribution": "human"
+    },
+    {
+      "path": "src/app/infrastructure/persistence_sqla/provider.py",
+      "added": 75,
+      "deleted": 0,
+      "attribution": "human"
+    },
+    {
+      "path": "src/app/infrastructure/persistence_sqla/registry.py",
+      "added": 16,
+      "deleted": 0,
+      "attribution": "human"
+    },
+    {
+      "path": "src/app/presentation/__init__.py",
+      "added": 0,
+      "deleted": 0,
+      "attribution": "human"
+    },
+    {
+      "path": "src/app/presentation/http/__init__.py",
+      "added": 0,
+      "deleted": 0,
+      "attribution": "human"
+    },
+    {
+      "path": "src/app/presentation/http/auth/__init__.py",
+      "added": 0,
+      "deleted": 0,
+      "attribution": "human"
+    },
+    {
+      "path": "src/app/presentation/http/auth/access_token_processor_jwt.py",
+      "added": 61,
+      "deleted": 0,
+      "attribution": "human"
+    },
+    {
+      "path": "src/app/presentation/http/auth/adapters/__init__.py",
+      "added": 0,
+      "deleted": 0,
+      "attribution": "human"
+    },
+    {
+      "path": "src/app/presentation/http/auth/adapters/session_transport_jwt_cookie.py",
+      "added": 61,
+      "deleted": 0,
+      "attribution": "human"
+    },
+    {
+      "path": "src/app/presentation/http/auth/asgi_middleware.py",
+      "added": 101,
+      "deleted": 0,
+      "attribution": "human"
+    },
+    {
+      "path": "src/app/presentation/http/auth/constants.py",
+      "added": 18,
+      "deleted": 0,
+      "attribution": "human"
+    },
+    {
+      "path": "src/app/presentation/http/auth/cookie_params.py",
+      "added": 12,
+      "deleted": 0,
+      "attribution": "human"
+    },
+    {
+      "path": "src/app/presentation/http/auth/fastapi_openapi_markers.py",
+      "added": 9,
+      "deleted": 0,
+      "attribution": "human"
+    },
+    {
+      "path": "src/app/presentation/http/controllers/__init__.py",
+      "added": 0,
+      "deleted": 0,
+      "attribution": "human"
+    },
+    {
+      "path": "src/app/presentation/http/controllers/account/__init__.py",
+      "added": 0,
+      "deleted": 0,
+      "attribution": "human"
+    },
+    {
+      "path": "src/app/presentation/http/controllers/account/log_in.py",
+      "added": 47,
+      "deleted": 0,
+      "attribution": "human"
+    },
+    {
+      "path": "src/app/presentation/http/controllers/account/log_out.py",
+      "added": 47,
+      "deleted": 0,
+      "attribution": "human"
+    },
+    {
+      "path": "src/app/presentation/http/controllers/account/router.py",
+      "added": 27,
+      "deleted": 0,
+      "attribution": "human"
+    },
+    {
+      "path": "src/app/presentation/http/controllers/account/sign_up.py",
+      "added": 58,
+      "deleted": 0,
+      "attribution": "human"
+    },
+    {
+      "path": "src/app/presentation/http/controllers/api_v1_router.py",
+      "added": 22,
+      "deleted": 0,
+      "attribution": "human"
+    },
+    {
+      "path": "src/app/presentation/http/controllers/general/__init__.py",
+      "added": 0,
+      "deleted": 0,
+      "attribution": "human"
+    },
+    {
+      "path": "src/app/presentation/http/controllers/general/healthcheck.py",
+      "added": 16,
+      "deleted": 0,
+      "attribution": "human"
+    },
+    {
+      "path": "src/app/presentation/http/controllers/general/router.py",
+      "added": 18,
+      "deleted": 0,
+      "attribution": "human"
+    },
+    {
+      "path": "src/app/presentation/http/controllers/root_router.py",
+      "added": 23,
+      "deleted": 0,
+      "attribution": "human"
+    },
+    {
+      "path": "src/app/presentation/http/controllers/users/__init__.py",
+      "added": 0,
+      "deleted": 0,
+      "attribution": "human"
+    },
+    {
+      "path": "src/app/presentation/http/controllers/users/activate_user.py",
+      "added": 58,
+      "deleted": 0,
+      "attribution": "human"
+    },
+    {
+      "path": "src/app/presentation/http/controllers/users/change_password.py",
+      "added": 58,
+      "deleted": 0,
+      "attribution": "human"
+    },
+    {
+      "path": "src/app/presentation/http/controllers/users/create_user.py",
+      "added": 77,
+      "deleted": 0,
+      "attribution": "human"
+    },
+    {
+      "path": "src/app/presentation/http/controllers/users/deactivate_user.py",
+      "added": 58,
+      "deleted": 0,
+      "attribution": "human"
+    },
+    {
+      "path": "src/app/presentation/http/controllers/users/grant_admin.py",
+      "added": 58,
+      "deleted": 0,
+      "attribution": "human"
+    },
+    {
+      "path": "src/app/presentation/http/controllers/users/list_users.py",
+      "added": 80,
+      "deleted": 0,
+      "attribution": "human"
+    },
+    {
+      "path": "src/app/presentation/http/controllers/users/revoke_admin.py",
+      "added": 58,
+      "deleted": 0,
+      "attribution": "human"
+    },
+    {
+      "path": "src/app/presentation/http/controllers/users/router.py",
+      "added": 43,
+      "deleted": 0,
+      "attribution": "human"
+    },
+    {
+      "path": "src/app/presentation/http/errors/__init__.py",
+      "added": 0,
+      "deleted": 0,
+      "attribution": "human"
+    },
+    {
+      "path": "src/app/presentation/http/errors/callbacks.py",
+      "added": 11,
+      "deleted": 0,
+      "attribution": "human"
+    },
+    {
+      "path": "src/app/presentation/http/errors/translators.py",
+      "added": 12,
+      "deleted": 0,
+      "attribution": "human"
+    },
+    {
+      "path": "src/app/run.py",
+      "added": 42,
+      "deleted": 0,
+      "attribution": "human"
+    },
+    {
+      "path": "src/app/setup/__init__.py",
+      "added": 0,
+      "deleted": 0,
+      "attribution": "human"
+    },
+    {
+      "path": "src/app/setup/app_factory.py",
+      "added": 48,
+      "deleted": 0,
+      "attribution": "human"
+    },
+    {
+      "path": "src/app/setup/config/__init__.py",
+      "added": 0,
+      "deleted": 0,
+      "attribution": "human"
+    },
+    {
+      "path": "src/app/setup/config/database.py",
+      "added": 51,
+      "deleted": 0,
+      "attribution": "human"
+    },
+    {
+      "path": "src/app/setup/config/loader.py",
+      "added": 105,
+      "deleted": 0,
+      "attribution": "human"
+    },
+    {
+      "path": "src/app/setup/config/logs.py",
+      "added": 36,
+      "deleted": 0,
+      "attribution": "human"
+    },
+    {
+      "path": "src/app/setup/config/security.py",
+      "added": 55,
+      "deleted": 0,
+      "attribution": "human"
+    },
+    {
+      "path": "src/app/setup/config/settings.py",
+      "added": 22,
+      "deleted": 0,
+      "attribution": "human"
+    },
+    {
+      "path": "src/app/setup/ioc/__init__.py",
+      "added": 0,
+      "deleted": 0,
+      "attribution": "human"
+    },
+    {
+      "path": "src/app/setup/ioc/application.py",
+      "added": 84,
+      "deleted": 0,
+      "attribution": "human"
+    },
+    {
+      "path": "src/app/setup/ioc/domain.py",
+      "added": 28,
+      "deleted": 0,
+      "attribution": "human"
+    },
+    {
+      "path": "src/app/setup/ioc/infrastructure.py",
+      "added": 105,
+      "deleted": 0,
+      "attribution": "human"
+    },
+    {
+      "path": "src/app/setup/ioc/presentation.py",
+      "added": 17,
+      "deleted": 0,
+      "attribution": "human"
+    },
+    {
+      "path": "src/app/setup/ioc/provider_registry.py",
+      "added": 19,
+      "deleted": 0,
+      "attribution": "human"
+    },
+    {
+      "path": "src/app/setup/ioc/settings.py",
+      "added": 57,
+      "deleted": 0,
+      "attribution": "human"
+    },
+    {
+      "path": "tests/__init__.py",
+      "added": 0,
+      "deleted": 0,
+      "attribution": "human"
+    },
+    {
+      "path": "tests/app/__init__.py",
+      "added": 0,
+      "deleted": 0,
+      "attribution": "human"
+    },
+    {
+      "path": "tests/app/integration/__init__.py",
+      "added": 0,
+      "deleted": 0,
+      "attribution": "human"
+    },
+    {
+      "path": "tests/app/integration/setup/__init__.py",
+      "added": 0,
+      "deleted": 0,
+      "attribution": "human"
+    },
+    {
+      "path": "tests/app/integration/setup/test_cfg_loader.py",
+      "added": 5,
+      "deleted": 0,
+      "attribution": "human"
+    },
+    {
+      "path": "tests/app/performance/__init__.py",
+      "added": 0,
+      "deleted": 0,
+      "attribution": "human"
+    },
+    {
+      "path": "tests/app/performance/profile_password_hasher_bcrypt.py",
+      "added": 28,
+      "deleted": 0,
+      "attribution": "human"
+    },
+    {
+      "path": "tests/app/unit/__init__.py",
+      "added": 0,
+      "deleted": 0,
+      "attribution": "human"
+    },
+    {
+      "path": "tests/app/unit/application/__init__.py",
+      "added": 0,
+      "deleted": 0,
+      "attribution": "human"
+    },
+    {
+      "path": "tests/app/unit/application/authz_service/__init__.py",
+      "added": 0,
+      "deleted": 0,
+      "attribution": "human"
+    },
+    {
+      "path": "tests/app/unit/application/authz_service/permission_stubs.py",
+      "added": 18,
+      "deleted": 0,
+      "attribution": "human"
+    },
+    {
+      "path": "tests/app/unit/application/authz_service/test_authorize.py",
+      "added": 26,
+      "deleted": 0,
+      "attribution": "human"
+    },
+    {
+      "path": "tests/app/unit/application/authz_service/test_composite.py",
+      "added": 21,
+      "deleted": 0,
+      "attribution": "human"
+    },
+    {
+      "path": "tests/app/unit/application/authz_service/test_permissions.py",
+      "added": 113,
+      "deleted": 0,
+      "attribution": "human"
+    },
+    {
+      "path": "tests/app/unit/domain/__init__.py",
+      "added": 0,
+      "deleted": 0,
+      "attribution": "human"
+    },
+    {
+      "path": "tests/app/unit/domain/entities/__init__.py",
+      "added": 0,
+      "deleted": 0,
+      "attribution": "human"
+    },
+    {
+      "path": "tests/app/unit/domain/entities/test_base.py",
+      "added": 96,
+      "deleted": 0,
+      "attribution": "human"
+    },
+    {
+      "path": "tests/app/unit/domain/enums/__init__.py",
+      "added": 0,
+      "deleted": 0,
+      "attribution": "human"
+    },
+    {
+      "path": "tests/app/unit/domain/enums/test_user_role.py",
+      "added": 27,
+      "deleted": 0,
+      "attribution": "human"
+    },
+    {
+      "path": "tests/app/unit/domain/services/__init__.py",
+      "added": 0,
+      "deleted": 0,
+      "attribution": "human"
+    },
+    {
+      "path": "tests/app/unit/domain/services/conftest.py",
+      "added": 17,
+      "deleted": 0,
+      "attribution": "human"
+    },
+    {
+      "path": "tests/app/unit/domain/services/test_user.py",
+      "added": 202,
+      "deleted": 0,
+      "attribution": "human"
+    },
+    {
+      "path": "tests/app/unit/domain/value_objects/__init__.py",
+      "added": 0,
+      "deleted": 0,
+      "attribution": "human"
+    },
+    {
+      "path": "tests/app/unit/domain/value_objects/test_base.py",
+      "added": 59,
+      "deleted": 0,
+      "attribution": "human"
+    },
+    {
+      "path": "tests/app/unit/domain/value_objects/test_raw_password.py",
+      "added": 18,
+      "deleted": 0,
+      "attribution": "human"
+    },
+    {
+      "path": "tests/app/unit/domain/value_objects/test_username.py",
+      "added": 71,
+      "deleted": 0,
+      "attribution": "human"
+    },
+    {
+      "path": "tests/app/unit/factories/__init__.py",
+      "added": 0,
+      "deleted": 0,
+      "attribution": "human"
+    },
+    {
+      "path": "tests/app/unit/factories/named_entity.py",
+      "added": 40,
+      "deleted": 0,
+      "attribution": "human"
+    },
+    {
+      "path": "tests/app/unit/factories/settings_data.py",
+      "added": 63,
+      "deleted": 0,
+      "attribution": "human"
+    },
+    {
+      "path": "tests/app/unit/factories/tagged_entity.py",
+      "added": 27,
+      "deleted": 0,
+      "attribution": "human"
+    },
+    {
+      "path": "tests/app/unit/factories/user_entity.py",
+      "added": 26,
+      "deleted": 0,
+      "attribution": "human"
+    },
+    {
+      "path": "tests/app/unit/factories/value_objects.py",
+      "added": 44,
+      "deleted": 0,
+      "attribution": "human"
+    },
+    {
+      "path": "tests/app/unit/infrastructure/__init__.py",
+      "added": 0,
+      "deleted": 0,
+      "attribution": "human"
+    },
+    {
+      "path": "tests/app/unit/infrastructure/test_password_hasher_bcrypt.py",
+      "added": 63,
+      "deleted": 0,
+      "attribution": "human"
+    },
+    {
+      "path": "tests/app/unit/setup/__init__.py",
+      "added": 0,
+      "deleted": 0,
+      "attribution": "human"
+    },
+    {
+      "path": "tests/app/unit/setup/test_cfg_database.py",
+      "added": 60,
+      "deleted": 0,
+      "attribution": "human"
+    },
+    {
+      "path": "tests/app/unit/setup/test_cfg_loader.py",
+      "added": 163,
+      "deleted": 0,
+      "attribution": "human"
+    },
+    {
+      "path": "tests/app/unit/setup/test_cfg_logs.py",
+      "added": 36,
+      "deleted": 0,
+      "attribution": "human"
+    },
+    {
+      "path": "tests/app/unit/setup/test_cfg_security.py",
+      "added": 58,
+      "deleted": 0,
+      "attribution": "human"
+    },
+    {
+      "path": "uv.lock",
+      "added": 890,
+      "deleted": 0,
+      "attribution": "human"
+    }
+  ],
+  "ai_added": 0,
+  "ai_deleted": 0,
+  "human_added": 9274,
+  "human_deleted": 1,
+  "ai_percentage": 0.0,
+  "session_ids": [],
+  "transparency_mode": "on"
+}
