@@ -1,0 +1,92 @@
+{
+  "anchor_schema_version": 1,
+  "oobo_version": "1.1.0",
+  "commit_hash": "ab5051d24bd35b91aa9981fead6652917b9411f7",
+  "branch": "main",
+  "author": "oobobench <bench@oobo.ai>",
+  "author_type": "automated",
+  "contributors": [
+    {
+      "name": "oobobench <bench@oobo.ai>",
+      "role": "human"
+    }
+  ],
+  "committed_at": 1780006757,
+  "message": "Add slots to value objects",
+  "files_changed": [
+    "src/app/domain/value_objects/base.py",
+    "src/app/domain/value_objects/raw_password.py",
+    "src/app/domain/value_objects/user_id.py",
+    "src/app/domain/value_objects/user_password_hash.py",
+    "src/app/domain/value_objects/username.py",
+    "tests/app/unit/domain/value_objects/test_base.py",
+    "tests/app/unit/factories/named_entity.py",
+    "tests/app/unit/factories/tagged_entity.py",
+    "tests/app/unit/factories/value_objects.py"
+  ],
+  "added": 97,
+  "deleted": 59,
+  "file_changes": [
+    {
+      "path": "src/app/domain/value_objects/base.py",
+      "added": 30,
+      "deleted": 28,
+      "attribution": "human"
+    },
+    {
+      "path": "src/app/domain/value_objects/raw_password.py",
+      "added": 4,
+      "deleted": 4,
+      "attribution": "human"
+    },
+    {
+      "path": "src/app/domain/value_objects/user_id.py",
+      "added": 1,
+      "deleted": 1,
+      "attribution": "human"
+    },
+    {
+      "path": "src/app/domain/value_objects/user_password_hash.py",
+      "added": 1,
+      "deleted": 1,
+      "attribution": "human"
+    },
+    {
+      "path": "src/app/domain/value_objects/username.py",
+      "added": 10,
+      "deleted": 10,
+      "attribution": "human"
+    },
+    {
+      "path": "tests/app/unit/domain/value_objects/test_base.py",
+      "added": 47,
+      "deleted": 11,
+      "attribution": "human"
+    },
+    {
+      "path": "tests/app/unit/factories/named_entity.py",
+      "added": 1,
+      "deleted": 1,
+      "attribution": "human"
+    },
+    {
+      "path": "tests/app/unit/factories/tagged_entity.py",
+      "added": 1,
+      "deleted": 1,
+      "attribution": "human"
+    },
+    {
+      "path": "tests/app/unit/factories/value_objects.py",
+      "added": 2,
+      "deleted": 2,
+      "attribution": "human"
+    }
+  ],
+  "ai_added": 0,
+  "ai_deleted": 0,
+  "human_added": 97,
+  "human_deleted": 59,
+  "ai_percentage": 0.0,
+  "session_ids": [],
+  "transparency_mode": "on"
+}
